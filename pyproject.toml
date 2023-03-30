@@ -1,0 +1,49 @@
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=7.2.2",
+    "httpx>=0.23.3",
+]
+lint = [
+    "flake8>=6.0.0",
+    "black>=23.3.0",
+    "mypy>=1.1.1",
+    "isort>=5.12.0",
+    "pylint>=2.17.1",
+]
+doc = [
+    "mkdocs>=1.4.2",
+]
+[tool.pdm.scripts]
+_.env = {MAIN_URL = "/status"}
+core.cmd = "uvicorn src.core.main:app --reload --port 8000"
+test.cmd = "pytest tests/"
+sort = "isort src/ tests/"
+blck = "black src/ tests/"
+lint = "pylint tests/"
+lint-test = "pylint tests/"
+flake = "flake8 src/ tests/"
+lint-all = {composite = ["blck", "lint", "lint-test", "flake", "sort"]}
+
+
+[project]
+name = "gku-proxy"
+version = "0.0.1"
+description = "FastAPI App for multiplying API requests"
+authors = [
+    {name = "YuriyGrinev", email = "yv.grinev@gmail.com"},
+]
+dependencies = [
+    "fastapi>=0.95.0",
+    "uvicorn>=0.21.1",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pytest.ini_options]
+pythonpath = [".", "src"]

@@ -1,0 +1,17 @@
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "pytest",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "args": ["tests/"],
+            "justMyCode": false,
+            "env": {
+                "MAIN_URL": "/status",
+                "PYTHONPATH": "__pypackages__/3.11/lib",}
+        }
+    ]
+}
