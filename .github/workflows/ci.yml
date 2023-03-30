@@ -33,4 +33,4 @@ jobs:
       
       - name: Run tests
         run: |
-          pdm run test
+          pdm run tests
