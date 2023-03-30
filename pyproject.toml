@@ -17,7 +17,7 @@ doc = [
 [tool.pdm.scripts]
 _.env = {MAIN_URL = "/status"}
 core.cmd = "uvicorn src.core.main:app --reload --port 8000"
-test.cmd = "pytest tests/"
+tests.cmd = "pytest tests/"
 sort = "isort src/ tests/"
 blck = "black src/ tests/"
 lint = "pylint tests/"

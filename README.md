@@ -25,14 +25,14 @@ To run autoformatting, linting
 
 ```console
 
-pdm run test
+pdm run lint-all
 ```
 
 To run unittest localy
 
 ```console
 
-pdm run lint-all
+pdm run tests
 ```
 
 To run app localy
