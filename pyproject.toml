@@ -20,6 +20,7 @@ dev = [
 [tool.pdm.scripts]
 _.env = {MAIN_URL = "/status"}
 core.cmd = "uvicorn src.core.main:app --reload --port 8000"
+rest.cmd = "uvicorn src.core.rest-api.clients:app --reload --port 8000"
 tests.cmd = "pytest tests/"
 sort = "isort src/ tests/"
 blck = "black src/ tests/"
@@ -39,6 +40,7 @@ authors = [
 dependencies = [
     "fastapi>=0.95.0",
     "uvicorn>=0.21.1",
+    "python-multipart>=0.0.6",
 ]
 requires-python = ">=3.11"
 readme = "README.md"

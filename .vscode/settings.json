@@ -4,5 +4,9 @@
   ],
   "python.analysis.extraPaths": [
     "__pypackages__/3.11/lib"
-  ]
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.formatting.provider": "none"
 }

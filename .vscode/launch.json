@@ -1,17 +1,31 @@
-
 {
     "version": "0.2.0",
     "configurations": [
+        {
+            "name": "Python: FastAPI",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "src.f:app",
+                "--reload"
+            ],
+            "jinja": true,
+            "justMyCode": true
+        },
         {
             "name": "pytest",
             "type": "python",
             "request": "launch",
             "module": "pytest",
-            "args": ["tests/"],
+            "args": [
+                "tests/"
+            ],
             "justMyCode": false,
             "env": {
                 "MAIN_URL": "/status",
-                "PYTHONPATH": "__pypackages__/3.11/lib",}
+                "PYTHONPATH": "__pypackages__/3.11/lib",
+            }
         }
     ]
 }
